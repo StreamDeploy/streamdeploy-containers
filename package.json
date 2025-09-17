@@ -1,0 +1,27 @@
+{
+  "name": "streamdeploy-containers",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed": "node --loader ts-node/esm tools/seed-from-ts.ts",
+    "validate": "node tools/validate.mjs",
+    "build-index": "node tools/build-index.mjs",
+    "build-templates": "node tools/build-templates.mjs",
+    "build-dist": "npm run build-index && npm run build-templates",
+    "list-slugs": "node tools/list-slugs.mjs",
+    "format": "prettier -w ."
+  },
+  "dependencies": {
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "fs-extra": "11.2.0",
+    "glob": "11.0.0",
+    "yaml": "2.5.0"
+  },
+  "devDependencies": {
+    "prettier": "3.3.3",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.2"
+  }
+}
