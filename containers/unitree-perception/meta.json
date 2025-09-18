@@ -1,0 +1,24 @@
+{
+  "slug": "unitree-perception",
+  "name": "unitree-perception",
+  "tagline": "Perception Inference (ONNX/TensorRT) → ROS 2 detections",
+  "primaryHw": "Unitree control PC (amd64, optional NVIDIA GPU)",
+  "whatItDoes": "Subscribes to camera topic, runs ONNX/TensorRT model, and publishes detection results to ROS 2.",
+  "whyItSavesTime": "Drop-in perception service with CPU/GPU fallback, ROS 2-ready topics, and healthchecks.",
+  "architectures": ["amd64"],
+  "tags": ["ROS 2", "Unitree", "Perception", "ONNX", "Humanoid"],
+  "ghcr_image": "ghcr.io/streamdeploy/unitree-perception",
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {
+    "ROS_DISTRO": "humble",
+    "CAMERA_TOPIC": "/camera/image_raw",
+    "DETECTION_TOPIC": "/perception/detections",
+    "MODEL_PATH": "/models/yolov8n.onnx",
+    "CONF_THRESHOLD": "0.35"
+  },
+  "health_check_command": "bash -lc 'source /opt/ros/$ROS_DISTRO/setup.bash && ros2 topic list | grep -q /perception/detections'",
+  "resource_limits": { "cpu": "2.0", "memory": "2Gi" }
+}

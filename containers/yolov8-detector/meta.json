@@ -1,0 +1,17 @@
+{
+  "slug": "yolov8-detector",
+  "name": "yolov8-detector",
+  "tagline": "YOLOv8 Detector with ONNX/TensorRT Acceleration",
+  "primaryHw": "NVIDIA Orin/Jetson, RK3588 (arm64)",
+  "whatItDoes": "Loads Ultralytics YOLOv8 ONNX weights, runs GPU-accelerated inference, publishes detections via REST or ROS 2 topic.",
+  "whyItSavesTime": "Standard model every robotics dev asks for — tuned builds for Jetson & RK3588, no dependency pain.",
+  "architectures": ["arm64"],
+  "tags": ["ONNX", "TensorRT", "Computer Vision", "YOLO"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc '[ \"$MODE\" = \"rest\" ] && curl -fsS http://localhost:8080/health || exit 0'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

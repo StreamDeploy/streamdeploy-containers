@@ -1,0 +1,17 @@
+{
+  "slug": "vector-log-forwarder",
+  "name": "vector-log-forwarder",
+  "tagline": "Tiny log/metric shipper for fleets (HTTP/MQTT/Syslog → S3/HTTP)",
+  "primaryHw": "Generic Edge (arm64/amd64)",
+  "whatItDoes": "Uses Vector to tail container logs, parse JSON, and forward to your backend or cloud object storage.",
+  "whyItSavesTime": "Batteries-included log pipeline with structured parsing and backpressure—no custom agents needed.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["Logging", "Metrics", "Vector", "Observability"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'nc -z localhost 8686 || exit 0'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

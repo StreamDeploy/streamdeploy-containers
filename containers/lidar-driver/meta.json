@@ -1,0 +1,17 @@
+{
+  "slug": "lidar-driver",
+  "name": "lidar-driver",
+  "tagline": "LIDAR Driver + Visualizer (Velodyne, Ouster, RPLidar)",
+  "primaryHw": "Generic LIDARs via Ethernet/USB (arm64/amd64)",
+  "whatItDoes": "Includes common LIDAR drivers and publishes ROS 2 topics + optional RViz snapshot service.",
+  "whyItSavesTime": "Fleet teams don’t want to rebuild for every sensor vendor; this gives a one-line deployment baseline.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["ROS 2", "LIDAR", "Sensors"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'ros2 topic list | grep -q \"/scan\" || ros2 topic list | grep -q \"/points\"'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

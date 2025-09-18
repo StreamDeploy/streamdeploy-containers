@@ -1,0 +1,25 @@
+{
+  "slug": "unitree-navigation-control",
+  "name": "unitree-navigation-control",
+  "tagline": "Navigation & Control (Nav2 optional) + gait bridge",
+  "primaryHw": "Unitree H1 / G1 control PC (amd64)",
+  "whatItDoes": "Runs Nav2 (optional) and a bridge that converts /cmd_vel into Unitree gait commands or a control topic.",
+  "whyItSavesTime": "Pre-wired control stack with ROS 2 defaults and a simple Twist→gait bridge for quick bringup.",
+  "architectures": ["amd64"],
+  "tags": ["ROS 2", "Unitree", "Nav2", "Control", "Humanoid"],
+  "ghcr_image": "ghcr.io/streamdeploy/unitree-navigation",
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {
+    "ROS_DISTRO": "humble",
+    "USE_NAV2": "true",
+    "MAP_FILE": "/maps/map.yaml",
+    "CMD_VEL_TOPIC": "/cmd_vel",
+    "UNITREE_GAIT_TOPIC": "/unitree/gait_cmd",
+    "USE_SIM_TIME": "false"
+  },
+  "health_check_command": "bash -lc 'source /opt/ros/$ROS_DISTRO/setup.bash && ros2 topic list | grep -q /unitree/gait_cmd'",
+  "resource_limits": { "cpu": "2.0", "memory": "2Gi" }
+}

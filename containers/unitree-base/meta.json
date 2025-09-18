@@ -1,0 +1,27 @@
+{
+  "slug": "unitree-base",
+  "name": "unitree-base",
+  "tagline": "Unitree Humanoid Base (ROS 2 bringup + SDK bridge)",
+  "primaryHw": "Unitree H1 / G1 control PC (amd64)",
+  "whatItDoes": "Bootstraps ROS 2 Humble, sources the Unitree SDK/bringup, and exposes core state/control topics for the humanoid.",
+  "whyItSavesTime": "One-click bringup with sane DDS defaults, healthchecks, and env-config; mount or bake your Unitree workspace.",
+  "architectures": ["amd64"],
+  "tags": ["ROS 2", "Unitree", "Humanoid", "Bringup", "amd64"],
+  "ghcr_image": "ghcr.io/streamdeploy/unitree-base",
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {
+    "ROS_DISTRO": "humble",
+    "ROS_DOMAIN_ID": "0",
+    "RMW_IMPLEMENTATION": "rmw_cyclonedds_cpp",
+    "BRINGUP_PACKAGE": "unitree_bringup",
+    "BRINGUP_LAUNCH": "humanoid_bringup.launch.py",
+    "ROBOT_MODEL": "H1",
+    "NETWORK_INTERFACE": "eth0",
+    "UNITREE_SDK_PATH": "/work/unitree"
+  },
+  "health_check_command": "bash -lc 'source /opt/ros/$ROS_DISTRO/setup.bash && ros2 node list | grep -qi unitree'",
+  "resource_limits": { "cpu": "2.0", "memory": "1Gi" }
+}

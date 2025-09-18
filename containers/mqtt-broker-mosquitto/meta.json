@@ -1,0 +1,17 @@
+{
+  "slug": "mqtt-broker-mosquitto",
+  "name": "mqtt-broker-mosquitto",
+  "tagline": "TLS-ready Mosquitto broker with sane defaults",
+  "primaryHw": "Generic Edge (arm64/amd64)",
+  "whatItDoes": "Drops in an MQTT broker for telemetry/command. Mount certs; set env for auth; done.",
+  "whyItSavesTime": "Zero yak-shaving: persistent volumes, TLS, and password file handled automatically.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["MQTT", "Broker", "Telemetry", "IoT"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'nc -z localhost 1883 || nc -z localhost 8883'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

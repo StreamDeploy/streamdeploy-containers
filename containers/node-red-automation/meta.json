@@ -1,0 +1,17 @@
+{
+  "slug": "node-red-automation",
+  "name": "node-red-automation",
+  "tagline": "Node-RED flows for edge orchestration (MQTT/HTTP/ROS bridge)",
+  "primaryHw": "Generic Edge (arm64/amd64)",
+  "whatItDoes": "Low-code automations: bridge MQTT topics, HTTP webhooks, and ROS endpoints for quick prototypes.",
+  "whyItSavesTime": "Ship a ready Node-RED with curated nodes and healthchecks; mount flows and go.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["Node-RED", "Automation", "MQTT", "Bridge"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'wget -qO- http://localhost:1880 || exit 1'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

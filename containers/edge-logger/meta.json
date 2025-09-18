@@ -1,0 +1,17 @@
+{
+  "slug": "edge-logger",
+  "name": "edge-logger",
+  "tagline": "Unified Telemetry & Log Forwarder (Fluent Bit + gRPC)",
+  "primaryHw": "Generic Edge (arm64/amd64)",
+  "whatItDoes": "Collects ROS 2 logs, system metrics (CPU/GPU temp, disk, network), ships to central logging via gRPC/HTTP.",
+  "whyItSavesTime": "Debugging fleets is a nightmare without centralized telemetry — this container makes it turn-key.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["Logging", "Telemetry", "Observability"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'nc -z localhost 2020 || exit 0'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

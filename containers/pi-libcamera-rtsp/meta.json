@@ -1,0 +1,28 @@
+{
+  "slug": "pi-libcamera-rtsp",
+  "name": "pi-libcamera-rtsp",
+  "tagline": "Raspberry Pi Camera → RTSP/HLS with libcamera + GStreamer",
+  "primaryHw": "Raspberry Pi 4/5 & CM4/CM5 (arm64)",
+  "whatItDoes": "Captures from libcamera (Pi Cam v2/HQ/GS), encodes H.264/H.265 via V4L2, serves RTSP (optional HLS).",
+  "whyItSavesTime": "No more libcamera/GStreamer incantations; healthcheck, env-config, and multi-cam ready out of the box.",
+  "architectures": ["arm64"],
+  "tags": ["Raspberry Pi", "Camera", "RTSP", "HLS", "GStreamer", "arm64"],
+  "ghcr_image": "ghcr.io/streamdeploy/pi-libcamera-rtsp",
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": true,
+  "default_env": {
+    "CAMERA_INDEX": "0",
+    "WIDTH": "1280",
+    "HEIGHT": "720",
+    "FPS": "30",
+    "CODEC": "h264",
+    "RTSP_PORT": "8554"
+  },
+  "health_check_command": "bash -lc 'nc -z localhost $RTSP_PORT'",
+  "resource_limits": {
+    "cpu": "0.5",
+    "memory": "256Mi"
+  }
+}

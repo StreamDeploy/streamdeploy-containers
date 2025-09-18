@@ -1,0 +1,17 @@
+{
+  "slug": "rk3588-gstreamer-encoder",
+  "name": "rk3588-gstreamer-encoder",
+  "tagline": "RK3588 MPP/NPU-friendly H.264/H.265 hardware encoder + RTSP",
+  "primaryHw": "ROC-RK3588 / Orange Pi 5 (arm64)",
+  "whatItDoes": "Uses Rockchip MPP (rkmpp) via GStreamer to encode camera/video to RTSP with low CPU.",
+  "whyItSavesTime": "Avoids manual rkmpp plumbing and kernel driver quirks; one env-config to stream reliably.",
+  "architectures": ["arm64"],
+  "tags": ["RK3588", "GStreamer", "RTSP", "rkmpp", "arm64"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'nc -z localhost $RTSP_PORT'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

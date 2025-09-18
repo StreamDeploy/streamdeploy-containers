@@ -22,7 +22,7 @@ for (const file of metas) {
   const slug = meta.slug;
   const image = meta.ghcr_image || `${registry}/${imagePrefix}${slug}`;
 
-  // Read sources if present on disk
+  // Read sources from disk if present, fall back to meta definitions
   const dockerfilePath = path.join(dir, "Dockerfile");
   const entrypointPath = path.join(dir, "entrypoint.sh");
   const dockerfile = (await fs.pathExists(dockerfilePath)) ? await fs.readFile(dockerfilePath, "utf8") : (meta.dockerfile || "");
@@ -36,7 +36,6 @@ for (const file of metas) {
   });
 
   v1.push({
-    // Frontend-facing shape
     slug: meta.slug,
     name: meta.name,
     tagline: meta.tagline,
@@ -47,8 +46,6 @@ for (const file of metas) {
     tags: meta.tags,
     dockerfile,
     entrypoint,
-
-    // StreamDeploy extras
     ghcr_image: image,
     deployment_ready: meta.deployment_ready ?? true,
     quick_deploy_enabled: meta.quick_deploy_enabled ?? true,

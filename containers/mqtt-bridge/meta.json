@@ -1,0 +1,17 @@
+{
+  "slug": "mqtt-bridge",
+  "name": "mqtt-bridge",
+  "tagline": "ROS 2 ↔ MQTT Bridge (IoT/Cloud Integration)",
+  "primaryHw": "Generic Edge (arm64/amd64)",
+  "whatItDoes": "Bridges ROS 2 topics to MQTT (with TLS) for external dashboards, IoT brokers, or cloud services.",
+  "whyItSavesTime": "Every robotics company eventually hacks this together for monitoring — we give it as a clean primitive.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["ROS 2", "MQTT", "IoT", "Cloud"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'ros2 topic list | grep -q \"$ROS_SUBSCRIBE\" || exit 0'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "mediamtx-edge-relay",
+  "name": "mediamtx-edge-relay",
+  "tagline": "Unified RTSP/RTMP/WebRTC ingest & restream for fleets",
+  "primaryHw": "Generic Edge (arm64/amd64)",
+  "whatItDoes": "Runs MediaMTX (formerly rtsp-simple-server) to fan-in cameras and restream to RTSP/RTMP/WebRTC.",
+  "whyItSavesTime": "One binary to terminate weird camera protocols, add auth, and expose a consistent URL to your apps.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["MediaMTX", "RTSP", "RTMP", "WebRTC", "Gateway"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'nc -z localhost 8554'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

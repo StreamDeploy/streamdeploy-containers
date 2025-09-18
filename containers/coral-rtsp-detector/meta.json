@@ -1,0 +1,17 @@
+{
+  "slug": "coral-rtsp-detector",
+  "name": "coral-rtsp-detector",
+  "tagline": "Coral Edge TPU RTSP detector (Coral Dev Board/USB)",
+  "primaryHw": "Coral Dev Board / USB Accelerator (arm64/amd64 host)",
+  "whatItDoes": "Runs TFLite Edge TPU detection and serves annotated RTSP stream.",
+  "whyItSavesTime": "Bypasses libedgetpu/tflite install pains; ready RTSP overlay and health endpoints.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["Coral", "EdgeTPU", "RTSP", "TFLite"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'nc -z localhost $RTSP_PORT'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

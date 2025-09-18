@@ -1,0 +1,17 @@
+{
+  "slug": "openvino-fastapi-infer",
+  "name": "openvino-fastapi-infer",
+  "tagline": "Intel OpenVINO inference microservice (CPU/iGPU/NPU)",
+  "primaryHw": "Intel NUC / Arc / Core Ultra (amd64)",
+  "whatItDoes": "FastAPI wrapper around OpenVINO Runtime for image models, auto-selecting best device.",
+  "whyItSavesTime": "Skip SDK installs and sample refactors; drop a model and get /health and /infer immediately.",
+  "architectures": ["amd64"],
+  "tags": ["OpenVINO", "Intel", "Inference", "REST", "amd64"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "curl -fsS http://localhost:8080/health || exit 1",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

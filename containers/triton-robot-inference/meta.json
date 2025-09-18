@@ -1,0 +1,17 @@
+{
+  "slug": "triton-robot-inference",
+  "name": "triton-robot-inference",
+  "tagline": "TensorRT/ONNX runtime FastAPI microservice (Orin-first)",
+  "primaryHw": "NVIDIA Orin/Jetson (arm64)",
+  "whatItDoes": "Lightweight FastAPI microservice running ONNX Runtime/TensorRT for common vision models.",
+  "whyItSavesTime": "One-command GPU inference server; avoids building TRT engines by hand or stitching CUDA libs.",
+  "architectures": ["arm64"],
+  "tags": ["FastAPI", "ONNX", "TensorRT", "Jetson", "REST"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "curl -fsS http://localhost:8080/health || exit 1",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

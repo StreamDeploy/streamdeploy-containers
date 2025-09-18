@@ -1,0 +1,17 @@
+{
+  "slug": "slam-navigation",
+  "name": "slam-navigation",
+  "tagline": "ROS 2 SLAM & Navigation Stack (Orin/RK3588-first)",
+  "primaryHw": "NVIDIA Orin/Jetson, RK3588 (arm64)",
+  "whatItDoes": "Prebuilt slam_toolbox + nav2 container with tuned GMapping/Cartographer backends, publishes maps and path plans.",
+  "whyItSavesTime": "Avoids multi-hour ROS 2 build hell; provides a drop-in navigation baseline for AMRs and mobile robots.",
+  "architectures": ["arm64"],
+  "tags": ["ROS 2", "SLAM", "Navigation", "Robotics"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'ros2 node list | grep -q \"nav2\" || exit 1'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

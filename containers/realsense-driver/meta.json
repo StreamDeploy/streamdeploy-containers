@@ -1,0 +1,17 @@
+{
+  "slug": "realsense-driver",
+  "name": "realsense-driver",
+  "tagline": "Intel RealSense Camera ROS 2 Driver",
+  "primaryHw": "Intel RealSense D4xx/D435/D455, L515 (arm64/amd64)",
+  "whatItDoes": "Sets up librealsense + ROS 2 wrapper, streams depth + RGB topics.",
+  "whyItSavesTime": "Skips kernel patching, udev rules, and ROS driver compilation; instant depth camera integration.",
+  "architectures": ["arm64", "amd64"],
+  "tags": ["ROS 2", "Depth Camera", "Intel RealSense"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc 'ros2 topic list | grep -q \"/camera/color/image_raw\"'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}

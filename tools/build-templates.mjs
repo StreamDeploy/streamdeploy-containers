@@ -44,7 +44,6 @@ for (const file of metas) {
       env: meta.default_env || {},
       healthcheck: meta.health_check_command || "",
       resources: meta.resource_limits || { cpu: "1.0", memory: "512Mi" },
-      // Hints for UI / device agent:
       suggestedDevices: devices
     }
   };
@@ -55,4 +54,5 @@ for (const file of metas) {
 }
 
 await fs.writeJson(path.join(tmplDir, "index.json"), { version: 1, items: index }, { spaces: 2 });
+
 console.log(`✅ Built ${index.length} release template(s).`);

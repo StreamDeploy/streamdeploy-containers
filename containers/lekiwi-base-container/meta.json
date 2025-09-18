@@ -1,0 +1,25 @@
+{
+  "slug": "lekiwi-base-container",
+  "name": "lekiwi-base-container",
+  "tagline": "LeKiwi Robot Base Container (Raspberry Pi optimized)",
+  "primaryHw": "Raspberry Pi 4/5 & CM4/CM5 (arm64)",
+  "whatItDoes": "Complete LeKiwi robot software stack with host agent, configuration management, and Pi-optimized runtime.",
+  "whyItSavesTime": "Zero-setup LeKiwi deployment with pre-configured environment, health monitoring, and Pi-specific optimizations.",
+  "architectures": ["arm64"],
+  "tags": ["LeKiwi", "Raspberry Pi", "Robot", "Host Agent", "arm64"],
+  "ghcr_image": "ghcr.io/streamdeploy/lekiwi-base-container",
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": true,
+  "default_env": {
+    "ROBOT_ID": "my-kiwi",
+    "DEPLOY_ENV": "production",
+    "LOG_LEVEL": "INFO"
+  },
+  "health_check_command": "pgrep -f lerobot.robots.lekiwi.lekiwi_host",
+  "resource_limits": {
+    "cpu": "1.0",
+    "memory": "512Mi"
+  }
+}

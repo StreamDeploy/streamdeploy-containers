@@ -1,0 +1,17 @@
+{
+  "slug": "ros2-vision-streamer",
+  "name": "ros2-vision-streamer",
+  "tagline": "Multi-camera ROS 2 + GStreamer (Jetson/Orin-first)",
+  "primaryHw": "NVIDIA Orin/Jetson (arm64)",
+  "whatItDoes": "Multi-camera capture, H.264/H.265 encode via GStreamer; publishes ROS 2 topics; optional RTSP.",
+  "whyItSavesTime": "Skip driver wrangling, NVENC plumbing, ROS 2 packages, and camera calibration boilerplate.",
+  "architectures": ["arm64"],
+  "tags": ["ROS 2", "GStreamer", "RTSP", "NVENC", "Jetson", "arm64"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {},
+  "health_check_command": "bash -lc '[ \"$ENABLE_RTSP\" = \"true\" ] && nc -z localhost $RTSP_PORT || exit 0'",
+  "resource_limits": { "cpu": "1.0", "memory": "512Mi" }
+}
