@@ -29,6 +29,9 @@ jobs:
       slugs: ${{ steps.out.outputs.SLUGS }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: npm ci
       - id: changed
         uses: tj-actions/changed-files@v45
         with: { files: "containers/**" }
