@@ -111,7 +111,8 @@ jobs:
           echo "(labels were provided via build step input; this is a no-op)"
 
   build-dist:
-    needs: [build-publish]
+    needs: [plan-slugs]
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
