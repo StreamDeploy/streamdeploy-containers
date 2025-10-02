@@ -1,0 +1,14 @@
+# Global code owners for all files in the repository
+# These users will be automatically requested for review on all PRs
+
+* @jl-codes @clement880101
+
+# Specific ownership for critical files
+/.github/ @jl-codes @clement880101
+/schema/ @jl-codes @clement880101
+/tools/ @jl-codes @clement880101
+package.json @jl-codes @clement880101
+package-lock.json @jl-codes @clement880101
+
+# Container-specific ownership (all containers require review)
+/containers/ @jl-codes @clement880101

@@ -20,7 +20,9 @@ for (const file of metas) {
   const dir = path.dirname(file);
   const meta = await fs.readJson(file);
   const slug = meta.slug;
-  const image = meta.ghcr_image || `${registry}/${imagePrefix}${slug}`;
+  // Always use the constructed image URL to match GitHub Actions build pattern
+  // This ensures consistency between built images and marketplace index
+  const image = `${registry}/${imagePrefix}${slug}`;
 
   // Read sources from disk if present, fall back to meta definitions
   const dockerfilePath = path.join(dir, "Dockerfile");
