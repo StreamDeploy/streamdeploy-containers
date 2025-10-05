@@ -179,7 +179,7 @@ jobs:
           exit_code=0
           for dockerfile in ${{ steps.changed-dockerfiles.outputs.all_changed_files }}; do
             echo "Linting $dockerfile..."
-            if ! hadolint --failure-threshold warning "$dockerfile"; then
+            if ! hadolint --failure-threshold error "$dockerfile"; then
               exit_code=1
             fi
           done
