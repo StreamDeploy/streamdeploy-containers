@@ -1,5 +1,5 @@
-ARG BASE_IMAGE
-FROM ${BASE_IMAGE:-ros:humble-ros-base}
+ARG BASE_IMAGE=ros:humble-ros-base
+FROM ${BASE_IMAGE}
 USER root
 
 # Install perception dependencies and tools
