@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://streamdeploy.io/schemas/container-meta.schema.json",
   "title": "ContainerMeta",
   "type": "object",

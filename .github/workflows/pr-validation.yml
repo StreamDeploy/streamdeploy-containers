@@ -169,10 +169,21 @@ jobs:
 
       - name: Lint Dockerfiles
         if: steps.changed-dockerfiles.outputs.any_changed == 'true'
-        uses: hadolint/hadolint-action@v3.1.0
-        with:
-          dockerfile: ${{ steps.changed-dockerfiles.outputs.all_changed_files }}
-          failure-threshold: warning
+        run: |
+          # Install hadolint
+          wget -O hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+          chmod +x hadolint
+          sudo mv hadolint /usr/local/bin/
+          
+          # Lint each Dockerfile individually
+          exit_code=0
+          for dockerfile in ${{ steps.changed-dockerfiles.outputs.all_changed_files }}; do
+            echo "Linting $dockerfile..."
+            if ! hadolint --failure-threshold error "$dockerfile"; then
+              exit_code=1
+            fi
+          done
+          exit $exit_code
 
   check-documentation:
     runs-on: ubuntu-latest

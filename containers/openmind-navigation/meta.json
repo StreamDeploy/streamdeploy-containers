@@ -1,0 +1,20 @@
+{
+  "slug": "openmind-navigation",
+  "name": "OpenMind Navigation",
+  "tagline": "ROS 2 navigation stack for autonomous robots",
+  "primaryHw": "NVIDIA Orin, Jetson Xavier (arm64)",
+  "whatItDoes": "Provides modular navigation and path planning for autonomous robots with global/local path planning, obstacle avoidance, and goal execution. Integrates with ROS 2 and supports various locomotion configurations.",
+  "whyItSavesTime": "Drop-in navigation solution eliminates weeks of ROS 2 navigation tuning and configuration. Optimized for NVIDIA edge platforms with pre-configured path planners.",
+  "architectures": ["arm64"],
+  "tags": ["ROS 2", "Navigation", "Path Planning", "Robotics", "Autonomous"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {
+    "ROS_DOMAIN_ID": "0",
+    "RMW_IMPLEMENTATION": "rmw_cyclonedx_cpp"
+  },
+  "health_check_command": "bash -lc 'source /opt/ros/humble/setup.bash && ros2 node list | grep -q \"nav2\" || exit 1'",
+  "resource_limits": { "cpu": "2.0", "memory": "2Gi" }
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "openmind-perception",
+  "name": "OpenMind Perception",
+  "tagline": "Real-time perception for robotics edge AI",
+  "primaryHw": "NVIDIA Orin, Jetson Xavier (arm64)",
+  "whatItDoes": "Real-time perception module designed for robots and edge AI devices. Provides vision, object detection, and tracking capabilities with multimodal sensing integration. Optimized for hardware acceleration on NVIDIA platforms.",
+  "whyItSavesTime": "Pre-built perception pipeline eliminates months of computer vision development. Hardware-optimized inference with ROS 2 integration and ready-to-use object detection models.",
+  "architectures": ["arm64"],
+  "tags": ["ROS 2", "Perception", "Computer Vision", "Object Detection", "Robotics"],
+  "deployment_ready": true,
+  "quick_deploy_enabled": true,
+  "fork_customize_enabled": true,
+  "pi_optimized": false,
+  "default_env": {
+    "ROS_DOMAIN_ID": "0",
+    "RMW_IMPLEMENTATION": "rmw_cyclonedx_cpp",
+    "MODEL_PATH": "/opt/openmind/models"
+  },
+  "health_check_command": "bash -lc 'source /opt/ros/humble/setup.bash && ros2 node list | grep -q \"perception\" || exit 1'",
+  "resource_limits": { "cpu": "2.0", "memory": "2Gi" }
+}
